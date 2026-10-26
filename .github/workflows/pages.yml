@@ -1,4 +1,4 @@
-name: Deploy Lab 2 to GitHub Pages
+name: Deploy Lab 3 to GitHub Pages
 
 on:
   push:
@@ -26,10 +26,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-      - name: Upload Lab 2 site
+      - name: Upload Lab 3 site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: Lab 2
+          path: Lab 3
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
