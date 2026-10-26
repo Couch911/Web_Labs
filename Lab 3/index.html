@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог фільмів та серіалів — Бондаренко Костянтин</title>
+</head>
+<body>
+
+    <header>
+        <h1>Бондаренко Костянтин</h1>
+        <p>Студент факультету ЕлІТ СумДУ. Розробник каталогу фільмів та серіалів.</p>
+        <img src="photo.jpg" alt="Фото Бондаренка Костянтина" width="200" fetchpriority="high">
+    </header>
+    
+    <!-- ОНОВЛЕНА НАВІГАЦІЯ: Глобальна (між сторінками) та локальна (по цій сторінці) -->
+    <nav aria-label="Головна навігація сайту">
+        <h2>Головне меню</h2>
+        <ul>
+            <!-- aria-current="page" вказує, що ми зараз знаходимося саме на цій сторінці -->
+            <li><a href="index.html" aria-current="page">Головна (Каталог)</a></li>
+            <li><a href="details.html">Деталі фільму (Інтерстеллар)</a></li>
+            <li><a href="about.html">Про проєкт та FAQ</a></li>
+        </ul>
+
+        <h3>Швидкий перехід по сторінці</h3>
+        <ul>
+            <li><a href="#about">Про розробника</a></li>
+            <li><a href="#filters">Фільтри</a></li>
+            <li><a href="#catalog">Каталог фільмів</a></li>
+            <li><a href="#contacts">Контакти</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <article id="about">
+            <h2>Про мене та цей проєкт</h2>
+            <p>Ця сторінка створена як лабораторна робота для вивчення семантичної розмітки HTML5 без використання CSS. Тематика проєкту — каталог кіно.</p>
+        </article>
+
+        <section id="filters">
+            <h2>Пошук та фільтрація</h2>
+            <form action="#" method="get">
+                <p>
+                    <label for="search-title">Назва фільму або серіалу:</label>
+                    <input type="search" id="search-title" name="search" placeholder="Наприклад, Матриця">
+                </p>
+                <p>
+                    <label for="genre-select">Оберіть жанр:</label>
+                    <select id="genre-select" name="genre">
+                        <option value="all">Усі жанри</option>
+                        <option value="action">Бойовик</option>
+                        <option value="scifi">Фантастика</option>
+                        <option value="drama">Драма</option>
+                    </select>
+                </p>
+                <p>
+                    <input type="checkbox" id="watched-only" name="watched">
+                    <label for="watched-only">Тільки переглянуті</label>
+                </p>
+                <p>
+                    <button type="submit">Застосувати фільтри</button>
+                    <button type="reset">Очистити</button>
+                </p>
+            </form>
+        </section>
+
+        <section id="catalog">
+            <h2>Каталог</h2>
+            <ul>
+                <li>
+                    <article>
+                        <!-- ОНОВЛЕНО: Назва та постер тепер є посиланнями на details.html -->
+                        <h3><a href="details.html">Інтерстеллар</a></h3>
+                        <a href="details.html">
+                            <img src="interstellar.jpg" srcset="interstellar-320w.jpg 320w, interstellar.jpg 800w" sizes="(max-width: 600px) 320px, 800px" alt="Постер фільму Інтерстеллар" width="200" loading="lazy">
+                        </a>
+                        <p><strong>Жанр:</strong> Фантастика, Драма</p>
+                        <p><strong>Рік:</strong> <time datetime="2014">2014</time></p>
+                        <p><strong>Тривалість:</strong> <data value="169">169 хв</data></p>
+                        <p><strong>Сюжет:</strong> Команда дослідників вирушає крізь червоточину в просторі, щоб знайти новий дім для людства.</p>
+                        <p><input type="checkbox" id="watch1" checked disabled> <label for="watch1">Переглянуто</label></p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Матриця</h3>
+                        <img src="matrix.jpg" srcset="matrix-320w.jpg 320w, matrix.jpg 800w" sizes="(max-width: 600px) 320px, 800px" alt="Постер фільму Матриця" width="200" loading="lazy">
+                        <p><strong>Жанр:</strong> Фантастика, Бойовик</p>
+                        <p><strong>Рік:</strong> <time datetime="1999">1999</time></p>
+                        <p><strong>Тривалість:</strong> <data value="136">136 хв</data></p>
+                        <p><strong>Сюжет:</strong> Хакер Нео дізнається, що його світ — це віртуальна ілюзія, створена машинами.</p>
+                        <p><input type="checkbox" id="watch2" checked disabled> <label for="watch2">Переглянуто</label></p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Дюна</h3>
+                        <img src="dune.jpg" srcset="dune-320w.jpg 320w, dune.jpg 800w" sizes="(max-width: 600px) 320px, 800px" alt="Постер фільму Дюна" width="200" loading="lazy">
+                        <p><strong>Жанр:</strong> Фантастика, Пригоди</p>
+                        <p><strong>Рік:</strong> <time datetime="2021">2021</time></p>
+                        <p><strong>Тривалість:</strong> <data value="155">155 хв</data></p>
+                        <p><strong>Сюжет:</strong> Пол Атрід вирушає на найнебезпечнішу планету у всесвіті, щоб забезпечити майбутнє своєї родини.</p>
+                        <p><input type="checkbox" id="watch3" disabled> <label for="watch3">Переглянуто</label></p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Чорнобиль (Серіал)</h3>
+                        <img src="chernobyl.jpg" srcset="chernobyl-320w.jpg 320w, chernobyl.jpg 800w" sizes="(max-width: 600px) 320px, 800px" alt="Постер серіалу Чорнобиль" width="200" loading="lazy">
+                        <p><strong>Жанр:</strong> Драма, Історія</p>
+                        <p><strong>Рік:</strong> <time datetime="2019">2019</time></p>
+                        <p><strong>Тривалість:</strong> <data value="330">330 хв (5 серій)</data></p>
+                        <p><strong>Сюжет:</strong> Історія аварії на Чорнобильській АЕС та людей, які намагалися мінімізувати її наслідки.</p>
+                        <p><input type="checkbox" id="watch4" checked disabled> <label for="watch4">Переглянуто</label></p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Той, хто біжить по лезу 2049</h3>
+                        <img src="bladerunner.jpg" srcset="bladerunner-320w.jpg 320w, bladerunner.jpg 800w" sizes="(max-width: 600px) 320px, 800px" alt="Постер фільму Той, хто біжить по лезу 2049" width="200" loading="lazy">
+                        <p><strong>Жанр:</strong> Фантастика, Трилер</p>
+                        <p><strong>Рік:</strong> <time datetime="2017">2017</time></p>
+                        <p><strong>Тривалість:</strong> <data value="164">164 хв</data></p>
+                        <p><strong>Сюжет:</strong> Офіцер поліції розкриває таємницю, яка може занурити залишки суспільства в хаос.</p>
+                        <p><input type="checkbox" id="watch5" disabled> <label for="watch5">Переглянуто</label></p>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h3>Аватар</h3>
+                        <img src="avatar.jpg" srcset="avatar-320w.jpg 320w, avatar.jpg 800w" sizes="(max-width: 600px) 320px, 800px" alt="Постер фільму Аватар" width="200" loading="lazy">
+                        <p><strong>Жанр:</strong> Фантастика, Бойовик</p>
+                        <p><strong>Рік:</strong> <time datetime="2009">2009</time></p>
+                        <p><strong>Тривалість:</strong> <data value="162">162 хв</data></p>
+                        <p><strong>Сюжет:</strong> Морський піхотинець на візку відправляється на Пандору і опиняється між двома світами.</p>
+                        <p><input type="checkbox" id="watch6" checked disabled> <label for="watch6">Переглянуто</label></p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <aside>
+            <h2>Цікавий факт</h2>
+            <p>Сумарна тривалість усіх фільмів та серіалів у майбутньому списку становить понад 18 годин</p>
+        </aside>
+    </main>
+
+    <footer id="contacts">
+        <h2>Контакти</h2>
+        <p>Email: <a href="mailto:test@example.com">emailforwork@example.com</a></p>
+        <p>&copy; 2026 Бондаренко Костянтин. Сумський державний університет.</p>
+    </footer>
+
+</body>
+</html>
