@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтерстеллар — Деталі фільму</title>
+</head>
+<body>
+
+    <header>
+        <h1>Бондаренко Костянтин</h1>
+        <p>Студент факультету ЕлІТ СумДУ. Розробник каталогу фільмів та серіалів.</p>
+        <img src="photo.jpg" alt="Фото Проекту" width="200" fetchpriority="high">
+    </header>
+    
+    <!-- Глобальна навігація -->
+    <nav aria-label="Головна навігація сайту">
+        <h2>Головне меню</h2>
+        <ul>
+            <li><a href="index.html">Головна (Каталог)</a></li>
+            <li><a href="details.html" aria-current="page">Деталі фільму (Інтерстеллар)</a></li>
+            <li><a href="about.html">Про проєкт та FAQ</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <nav aria-label="Хлібні крихти">
+            <h2>Шлях на сайті:</h2>
+            <ol>
+                <li><a href="index.html">Головна (Каталог)</a></li>
+                <li>Інтерстеллар</li>
+            </ol>
+        </nav>
+
+        <article id="movie-details">
+            <h2>Інтерстеллар (2014)</h2>
+            
+            <!-- Адаптивне завантаження зображення через picture -->
+            <picture>
+                <source srcset="interstellar.webp" type="image/webp">
+                <img src="interstellar.jpg" alt="Постер фільму Інтерстеллар: Меттью Макконахі в скафандрі на фоні космосу" width="300">
+            </picture>
+
+            <h3>Характеристики фільму</h3>
+            <!-- Список визначень -->
+            <dl>
+                <dt>Режисер:</dt>
+                <dd>Крістофер Нолан</dd>
+                
+                <dt>Жанр:</dt>
+                <dd>Фантастика, Драма, Пригоди</dd>
+                
+                <dt>У головних ролях:</dt>
+                <dd>Меттью Макконахі, Енн Гетевей, Джессіка Честейн, Майкл Кейн</dd>
+                
+                <dt>Тривалість:</dt>
+                <dd><data value="169">169 хвилин</data></dd>
+                
+                <dt>Опис сюжету:</dt>
+                <dd>У недалекому майбутньому, коли Земля стає непридатною для життя через пилові бурі та хвороби рослин, команда дослідників вирушає крізь червоточину в космосі, щоб знайти нову домівку для людства. Вони мають з'ясувати, яка з трьох планет найкраще підходить для переселення землян.</dd>
+            </dl>
+
+            <h3>Доступні видання для покупки</h3>
+            <!-- Семантична таблиця даних -->
+            <table>
+                <caption>Порівняння видань фільму "Інтерстеллар"</caption>
+                <thead>
+                    <tr>
+                        <!-- scope="col" вказує, що це заголовок для всього стовпця -->
+                        <th scope="col">Формат</th>
+                        <th scope="col">Роздільна здатність</th>
+                        <th scope="col">Наявність субтитрів</th>
+                        <th scope="col">Ціна (ГРН)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- scope="row" вказує, що це заголовок для конкретного рядка -->
+                        <th scope="row">Цифрова копія (SD)</th>
+                        <td>480p</td>
+                        <td>Так</td>
+                        <td>39.99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Blu-Ray</th>
+                        <td>1080p</td>
+                        <td>Так</td>
+                        <td>84.99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4K UHD + Blu-Ray</th>
+                        <td>2160p (4K)</td>
+                        <td>Так</td>
+                        <td>122.99</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+    </main>
+
+    <footer id="contacts">
+        <h2>Контакти</h2>
+        <p>Email: <a href="mailto:test@example.com">emailforwork@example.com</a></p>
+        <p>&copy; 2026 Бондаренко Костянтин. Сумський державний університет.</p>
+    </footer>
+
+</body>
+</html>
