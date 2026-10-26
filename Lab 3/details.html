@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Інтерстеллар — Деталі фільму</title>
+    <meta name="description" content="Детальна інформація про фільм Інтерстеллар: опис сюжету, технічні характеристики та порівняння доступних видань.">
+    <title>Інтерстеллар – Каталог фільмів та серіалів</title>
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
 
     <header>
-        <h1>Бондаренко Костянтин</h1>
+        <p><strong>Бондаренко Костянтин</strong></p>
         <p>Студент факультету ЕлІТ СумДУ. Розробник каталогу фільмів та серіалів.</p>
-        <img src="photo.jpg" alt="Фото Проекту" width="200" fetchpriority="high">
+        <img src="photo.jpg" alt="Фото проекту" width="200" fetchpriority="high">
     </header>
     
-    <!-- Глобальна навігація -->
-    <nav aria-label="Головна навігація сайту">
+    <nav aria-label="Основна навігація">
         <h2>Головне меню</h2>
         <ul>
             <li><a href="index.html">Головна (Каталог)</a></li>
@@ -27,23 +28,41 @@
         <nav aria-label="Хлібні крихти">
             <h2>Шлях на сайті:</h2>
             <ol>
-                <li><a href="index.html">Головна (Каталог)</a></li>
-                <li>Інтерстеллар</li>
+                <li><a href="index.html">Каталог</a></li>
+                <li aria-current="page">Інтерстеллар</li>
             </ol>
         </nav>
 
-        <article id="movie-details">
-            <h2>Інтерстеллар (2014)</h2>
-            
-            <!-- Адаптивне завантаження зображення через picture -->
-            <picture>
-                <source srcset="interstellar.webp" type="image/webp">
-                <img src="interstellar.jpg" alt="Постер фільму Інтерстеллар: Меттью Макконахі в скафандрі на фоні космосу" width="300">
-            </picture>
+        <nav aria-label="На цій сторінці">
+            <h2>На цій сторінці</h2>
+            <ul>
+                <li><a href="#description">Опис</a></li>
+                <li><a href="#characteristics">Характеристики</a></li>
+                <li><a href="#editions">Видання</a></li>
+            </ul>
+        </nav>
 
-            <h3>Характеристики фільму</h3>
-            <!-- Список визначень -->
+        <article id="movie-details">
+            <h1>Інтерстеллар (2014)</h1>
+            
+            <figure>
+                <picture>
+                    <source srcset="interstellar.webp" type="image/webp">
+                    <img src="interstellar.jpg" alt="Меттью Макконахі в скафандрі на тлі космосу" width="300" height="450" fetchpriority="high">
+                </picture>
+                <figcaption>Постер фільму «Інтерстеллар»</figcaption>
+            </figure>
+
+            <h2 id="description">Опис</h2>
+            <p><strong>Інтерстеллар</strong> — науково-фантастична драма режисера Крістофера Нолана.</p>
+            <p>Дія розгортається <em>у недалекому майбутньому</em>, коли Земля стає непридатною для життя через глобальні кліматичні зміни та хвороби рослин.</p>
+            <p>Науковий консультант фільму — фізик <abbr title="Кіп Торн">К. Торн</abbr>.</p>
+
+            <h2 id="characteristics">Характеристики</h2>
             <dl>
+                <dt>Категорія:</dt>
+                <dd>Фільм</dd>
+                
                 <dt>Режисер:</dt>
                 <dd>Крістофер Нолан</dd>
                 
@@ -51,22 +70,23 @@
                 <dd>Фантастика, Драма, Пригоди</dd>
                 
                 <dt>У головних ролях:</dt>
-                <dd>Меттью Макконахі, Енн Гетевей, Джессіка Честейн, Майкл Кейн</dd>
+                <dd>Меттью Макконахі, Енн Гетевей, Джессіка Честейн</dd>
+
+                <dt>Дата виходу:</dt>
+                <dd><time datetime="2014-11-06">6 листопада 2014</time></dd>
                 
                 <dt>Тривалість:</dt>
                 <dd><data value="169">169 хвилин</data></dd>
-                
-                <dt>Опис сюжету:</dt>
-                <dd>У недалекому майбутньому, коли Земля стає непридатною для життя через пилові бурі та хвороби рослин, команда дослідників вирушає крізь червоточину в космосі, щоб знайти нову домівку для людства. Вони мають з'ясувати, яка з трьох планет найкраще підходить для переселення землян.</dd>
+
+                <dt>Стан:</dt>
+                <dd>Переглянуто</dd>
             </dl>
 
-            <h3>Доступні видання для покупки</h3>
-            <!-- Семантична таблиця даних -->
+            <h2 id="editions">Видання</h2>
             <table>
                 <caption>Порівняння видань фільму "Інтерстеллар"</caption>
                 <thead>
                     <tr>
-                        <!-- scope="col" вказує, що це заголовок для всього стовпця -->
                         <th scope="col">Формат</th>
                         <th scope="col">Роздільна здатність</th>
                         <th scope="col">Наявність субтитрів</th>
@@ -75,32 +95,35 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <!-- scope="row" вказує, що це заголовок для конкретного рядка -->
-                        <th scope="row">Цифрова копія (SD)</th>
-                        <td>480p</td>
+                        <th scope="row">Цифрова копія </th>
+                        <td>720p</td>
                         <td>Так</td>
-                        <td>39.99</td>
+                        <td>49.99</td>
                     </tr>
                     <tr>
                         <th scope="row">Blu-Ray</th>
                         <td>1080p</td>
                         <td>Так</td>
-                        <td>84.99</td>
+                        <td>94.99</td>
                     </tr>
                     <tr>
                         <th scope="row">4K UHD + Blu-Ray</th>
                         <td>2160p (4K)</td>
                         <td>Так</td>
-                        <td>122.99</td>
+                        <td>124.99</td>
                     </tr>
                 </tbody>
             </table>
+            
+            <p><a href="index.html">Повернутися до каталогу</a></p>
         </article>
     </main>
 
     <footer id="contacts">
         <h2>Контакти</h2>
-        <p>Email: <a href="mailto:test@example.com">emailforwork@example.com</a></p>
+        <address>
+            Автор проєкту: Бондаренко Костянтин, <a href="mailto:emailforwork@example.com">emailforwork@example.com</a>
+        </address>
         <p>&copy; 2026 Бондаренко Костянтин. Сумський державний університет.</p>
     </footer>
 
