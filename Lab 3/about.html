@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про проєкт та FAQ — Бондаренко Костянтин</title>
+</head>
+<body>
+
+    <header>
+        <h1>Бондаренко Костянтин</h1>
+        <p>Студент факультету ЕлІТ СумДУ. Розробник каталогу фільмів та серіалів.</p>
+        <img src="photo.jpg" alt="Фото проекту" width="200" fetchpriority="high">
+    </header>
+    
+    <!-- Глобальна навігація -->
+    <nav aria-label="Головна навігація сайту">
+        <h2>Головне меню</h2>
+        <ul>
+            <li><a href="index.html">Головна (Каталог)</a></li>
+            <li><a href="details.html">Деталі фільму (Інтерстеллар)</a></li>
+            <li><a href="about.html" aria-current="page">Про проєкт та FAQ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Внутрішня навігація по цій сторінці -->
+    <nav aria-label="Навігація по сторінці">
+        <h2>Швидкий перехід:</h2>
+        <ul>
+            <li><a href="#process">Етапи розробки та технології</a></li>
+            <li><a href="#media">Відео</a></li>
+            <li><a href="#faq">Часті запитання FAQ</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <!-- Секція зі списками-->
+        <section id="process">
+            <h2>Етапи розробки та використані технології</h2>
+            
+            <h3>Як створювався цей сайт </h3>
+            <ol>
+                <li>Створення базової структури <code>index.html</code>.</li>
+                <li>Налаштування глобальної навігації для зв'язку між файлами.</li>
+                <li>Розробка сторінки <code>details.html</code> із застосуванням таблиць та <code>&lt;picture&gt;</code>.</li>
+                <li>Верстка сторінки <code>about.html</code> із відео та FAQ.</li>
+                <li>Валідація коду через W3C Nu HTML Checker.</li>
+            </ol>
+
+            <h3>Використані теги та технології (Маркований список)</h3>
+            <ul>
+                <li>Семантичні теги: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code></li>
+                <li>Машинно-читані дані: <code>&lt;time&gt;</code>, <code>&lt;data&gt;</code></li>
+                <li>Медіа: <code>&lt;video&gt;</code>, <code>&lt;picture&gt;</code></li>
+                <li>Інтерактивні елементи: <code>&lt;details&gt;</code>, <code>&lt;summary&gt;</code></li>
+            </ul>
+        </section>
+
+        <!-- Секція з відео -->
+        <section id="media">
+            <h2>Відеопрезентація проєкту</h2>
+            <p>Нижче представлено коротке відео (трейлер) для демонстрації роботи тегу відео в HTML5.</p>
+            
+            <!-- Тег video. controls додає кнопки плей/пауза/гучність -->
+            <video width="600" controls>
+                <source src="trailer.mp4" type="video/mp4">
+                <!-- Трек для субтитрів -->
+                <track src="subtitles.vtt" kind="subtitles" srclang="uk" label="Українські субтитри" default>
+                Ваш браузер не підтримує відтворення HTML5-відео. Ви можете <a href="trailer.mp4">завантажити відео</a>.
+            </video>
+        </section>
+
+        <!-- Секція FAQ з розкривними блоками -->
+        <section id="faq">
+            <h2>Часті запитання (FAQ)</h2>
+            
+            <details>
+                <!-- summary - це видимий заголовок, на який треба клікнути -->
+                <summary>Чому цей сайт виглядає так просто, без кольорів?</summary>
+                <!-- Все, що нижче summary, буде приховано до кліку -->
+                <p>Мета цієї лабораторної роботи це вивчення саме <strong>структури та семантики</strong> HTML-документа. Оформлення (кольори, шрифти, сітки) буде додано пізніше за допомогою каскадних таблиць стилів (CSS).</p>
+            </details>
+
+            <details>
+                <summary>Для чого потрібні елементи details та summary?</summary>
+                <p>Вони дозволяють створювати інтерактивні розкривні блоки виключно засобами HTML, без використання JavaScript. Це корисно для приховування великих обсягів тексту, як-от відповідей на часті запитання.</p>
+            </details>
+
+            <details>
+                <summary>Що таке "семантична розмітка"?</summary>
+                <p>Це використання HTML-тегів за їхнім прямим призначенням наприклад, <code>&lt;article&gt;</code> для незалежного контенту, а не просто <code>&lt;div&gt;</code>). Це робить сайт зрозумілим для пошукових систем (SEO) та людей із вадами зору, які використовують скрінрідери.</p>
+            </details>
+        </section>
+    </main>
+
+    <footer id="contacts">
+        <h2>Контакти</h2>
+        <p>Email: <a href="mailto:test@example.com">emailforwork@example.com</a></p>
+        <p>&copy; 2026 Бондаренко Костянтин. Сумський державний університет.</p>
+    </footer>
+
+</body>
+</html>
