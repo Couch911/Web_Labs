@@ -1,0 +1,10 @@
+name | Значення | Тип даних | Елемент керування | Обмеження
+id | Ідентифікатор | number | input type="hidden" | лише у формі редагування
+title | Назва | string | input type="text" | required, minlength="2", maxlength="100"
+code | Код у каталозі | string | input type="text" | required, pattern="(FM|SR)-[0-9]{3}" (FM-001 — фільм, SR-001 — серіал)
+category | Жанр | string (enum) | select | required; перший пункт порожній; допустимі значення: action, scifi, drama, adventure, history, thriller
+duration | Тривалість, хв | number | input type="number" | required, min="1", max="1000", step="1"
+addedAt | Дата додавання | string (дата) | input type="date" | required, min="2024-01-01", max="2026-12-31"
+poster | Постер | file | input type="file" | accept="image/jpeg,image/png,image/webp"
+description | Сюжет | string | textarea | maxlength="500"
+watched | Переглянуто | boolean | input type="checkbox" | value="true"
