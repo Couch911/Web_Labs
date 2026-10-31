@@ -8,3 +8,13 @@ addedAt | Дата додавання | string (дата) | input type="date" | 
 poster | Постер | file | input type="file" | accept="image/jpeg,image/png,image/webp"
 description | Сюжет | string | textarea | maxlength="500"
 watched | Переглянуто | boolean | input type="checkbox" | value="true"
+
+Поля форми відгуку
+name | Значення | Тип даних | Елемент керування | Обмеження
+authorName | Ім’я автора | string | input type="text" | autocomplete="name", maxlength="50"
+email | Електронна пошта | string | input type="email" | required, autocomplete="email"
+phone | Телефон | string | input type="tel" | autocomplete="tel", pattern="\+380[0-9]{9}"; необов’язкове
+rating | Оцінка | number (1–5) | 5 × input type="radio" у fieldset | required на першому radio
+recommend | Рекомендація | number (0–10) | input type="range" | min="0", max="10", step="1", value="5"
+comment | Коментар | string | textarea | minlength="10", maxlength="500"
+agree | Погодження | boolean | input type="checkbox" | required, value="true"
