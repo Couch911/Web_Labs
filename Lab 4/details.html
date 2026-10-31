@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Детальна інформація про фільм Інтерстеллар: опис сюжету, технічні характеристики та порівняння доступних видань.">
+    <meta name="description" content="Детальна інформація про фільм Інтерстеллар: опис сюжету, технічні характеристики, порівняння доступних видань та форма відгуку.">
     <title>Інтерстеллар – Каталог фільмів та серіалів</title>
     <link rel="icon" href="favicon.ico">
 </head>
@@ -39,6 +39,8 @@
                 <li><a href="#description">Опис</a></li>
                 <li><a href="#characteristics">Характеристики</a></li>
                 <li><a href="#editions">Видання</a></li>
+                <!-- НОВЕ -->
+                <li><a href="#review">Відгук</a></li>
             </ul>
         </nav>
 
@@ -117,6 +119,64 @@
             
             <p><a href="index.html">Повернутися до каталогу</a></p>
         </article>
+
+        <!-- форма відгуку -->
+        <section id="review" aria-labelledby="review-heading">
+            <h2 id="review-heading">Відгук</h2>
+            <p>Поділіться враженнями від фільму «Інтерстеллар». Форма надсилається методом get, тож відповіді видно в адресному рядку.</p>
+
+            <form id="review-form" action="details.html" method="get">
+                <p>
+                    <label for="review-name">Ім'я</label>
+                    <input id="review-name" name="authorName" type="text" autocomplete="name" maxlength="50" aria-describedby="review-name-hint">
+                </p>
+                <p id="review-name-hint">Необов'язково. До 50 символів.</p>
+
+                <p>
+                    <label for="review-email">Електронна пошта</label>
+                    <input id="review-email" name="email" type="email" autocomplete="email" required aria-describedby="review-email-hint">
+                </p>
+                <p id="review-email-hint">Обов'язково. Наприклад, name@example.com. </p>
+
+                <p>
+                    <label for="review-phone">Телефон</label>
+                    <input id="review-phone" name="phone" type="tel" autocomplete="tel" pattern="\+380[0-9]{9}" aria-describedby="review-phone-hint">
+                </p>
+                <p id="review-phone-hint">Необов'язково. Формат: +380 і 9 цифр наприклад +380501112233.</p>
+
+                <fieldset>
+                    <legend>Оцінка фільму</legend>
+                    <p>
+                        <label><input type="radio" name="rating" value="1" required> 1</label>
+                        <label><input type="radio" name="rating" value="2"> 2</label>
+                        <label><input type="radio" name="rating" value="3"> 3</label>
+                        <label><input type="radio" name="rating" value="4"> 4</label>
+                        <label><input type="radio" name="rating" value="5"> 5</label>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <label for="review-recommend">Чи порадите фільм друзям</label>
+                    <input id="review-recommend" name="recommend" type="range" min="0" max="10" step="1" value="5" aria-describedby="review-recommend-hint">
+                </p>
+                <p id="review-recommend-hint">Від 0 (точно ні) до 10 (обов'язково пораджу). Повзунок завжди передає число.</p>
+
+                <p>
+                    <label for="review-comment">Коментар</label>
+                    <textarea id="review-comment" name="comment" rows="4" cols="40" minlength="10" maxlength="500" aria-describedby="review-comment-hint"></textarea>
+                </p>
+                <p id="review-comment-hint">Необов'язково. Якщо пишете коментар, залиште від 10 до 500 символів.</p>
+
+                <p>
+                    <input id="review-agree" name="agree" type="checkbox" value="true" required>
+                    <label for="review-agree">Погоджуюся з правилами публікації відгуку</label>
+                </p>
+
+                <p>
+                    <button type="submit">Надіслати відгук</button>
+                </p>
+            </form>
+        </section>
     </main>
 
     <footer id="contacts">
@@ -124,6 +184,12 @@
         <address>
             Автор проєкту: Бондаренко Костянтин, <a href="mailto:emailforwork@example.com">emailforwork@example.com</a>
         </address>
+        <!-- НОВЕ: посилання на адміністрування -->
+        <nav aria-label="Службова навігація">
+            <ul>
+                <li><a href="admin.html">Адміністрування</a></li>
+            </ul>
+        </nav>
         <p>&copy; 2026 Бондаренко Костянтин. Сумський державний університет.</p>
     </footer>
 
