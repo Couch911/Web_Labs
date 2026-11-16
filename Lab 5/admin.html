@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Навчальна імітація адміністративного інтерфейсу каталогу фільмів та серіалів: перелік елементів каталогу та форма додавання нового елемента.">
+    <title>Адміністрування – Каталог фільмів та серіалів</title>
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+
+    <header>
+        <p><strong>Бондаренко Костянтин</strong></p>
+        <p>Студент факультету ЕлІТ СумДУ. Розробник каталогу фільмів та серіалів.</p>
+        <img src="photo.jpg" alt="Фото автора проєкту" width="200" fetchpriority="high">
+    </header>
+
+    <nav aria-label="Основна навігація">
+        <h2>Головне меню</h2>
+        <ul>
+            <li><a href="index.html">Головна (Каталог)</a></li>
+            <li><a href="details.html">Деталі фільму (Інтерстеллар)</a></li>
+            <li><a href="about.html">Про проєкт та FAQ</a></li>
+        </ul>
+    </nav>
+
+    <nav aria-label="На цій сторінці">
+        <h2>Швидкий перехід:</h2>
+        <ul>
+            <li><a href="#items">Елементи каталогу</a></li>
+            <li><a href="#add">Додати елемент</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Адміністрування каталогу</h1>
+        <p>Ця сторінка — навчальна імітація адміністративного інтерфейсу. Посилання в підвалі та перевірка полів у браузері не захищають дані: контроль доступу та остаточна перевірка виконуються на сервері.</p>
+
+        <section id="items" aria-labelledby="items-heading">
+            <h2 id="items-heading">Елементи каталогу</h2>
+            <p>На цьому етапі кожне посилання «Редагувати» відкриває одну навчальну форму — для фільму «Інтерстеллар».</p>
+
+            <table>
+                <caption>Фільми та серіали в каталозі</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Назва</th>
+                        <th scope="col">Категорія</th>
+                        <th scope="col">Тривалість, хв</th>
+                        <th scope="col">Переглянуто</th>
+                        <th scope="col">Дії</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Інтерстеллар</th>
+                        <td>Фантастика</td>
+                        <td>169</td>
+                        <td>так</td>
+                        <td><a href="admin-edit.html">Редагувати Інтерстеллар</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Матриця</th>
+                        <td>Фантастика</td>
+                        <td>136</td>
+                        <td>так</td>
+                        <td><a href="admin-edit.html">Редагувати Матриця</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Дюна</th>
+                        <td>Пригоди</td>
+                        <td>155</td>
+                        <td>ні</td>
+                        <td><a href="admin-edit.html">Редагувати Дюна</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Чорнобиль (Серіал)</th>
+                        <td>Історія</td>
+                        <td>330</td>
+                        <td>так</td>
+                        <td><a href="admin-edit.html">Редагувати Чорнобиль</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Той, хто біжить по лезу 2049</th>
+                        <td>Трилер</td>
+                        <td>164</td>
+                        <td>ні</td>
+                        <td><a href="admin-edit.html">Редагувати Той, хто біжить по лезу 2049</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Аватар</th>
+                        <td>Бойовик</td>
+                        <td>162</td>
+                        <td>так</td>
+                        <td><a href="admin-edit.html">Редагувати Аватар</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="add" aria-labelledby="add-heading">
+            <h2 id="add-heading">Додати елемент</h2>
+            <p>Форма надсилається методом get, тож введені дані видно в адресному рядку.</p>
+
+            <form id="item-form" action="admin.html" method="get">
+                <fieldset>
+                    <legend>Основні дані</legend>
+
+                    <p>
+                        <label for="item-title">Назва</label>
+                        <input id="item-title" name="title" type="text" required minlength="2" maxlength="100" aria-describedby="item-title-hint">
+                    </p>
+                    <p id="item-title-hint">Від 2 до 100 символів.</p>
+
+                    <p>
+                        <label for="item-code">Код у каталозі</label>
+                        <input id="item-code" name="code" type="text" required pattern="(FM|SR)-[0-9]{3}" aria-describedby="item-code-hint">
+                    </p>
+                    <p id="item-code-hint">FM (фільм) або SR (серіал), дефіс і три цифри, наприклад FM-014.</p>
+
+                    <p>
+                        <label for="item-category">Категорія</label>
+                        <select id="item-category" name="category" required>
+                            <option value="">Оберіть категорію</option>
+                            <option value="action">Бойовик</option>
+                            <option value="scifi">Фантастика</option>
+                            <option value="drama">Драма</option>
+                            <option value="adventure">Пригоди</option>
+                            <option value="history">Історія</option>
+                            <option value="thriller">Трилер</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="item-duration">Тривалість, хв</label>
+                        <input id="item-duration" name="duration" type="number" required min="1" max="1000" step="1" inputmode="numeric" aria-describedby="item-duration-hint">
+                    </p>
+                    <p id="item-duration-hint">Ціле число від 1 до 1000. Для серіалу вкажіть сумарну тривалість усіх серій.</p>
+
+                    <p>
+                        <label for="item-added">Дата додавання</label>
+                        <input id="item-added" name="addedAt" type="date" required min="2024-01-01" max="2026-12-31" aria-describedby="item-added-hint">
+                    </p>
+                    <p id="item-added-hint">Дата від 01.01.2024 до 31.12.2026.</p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Опис і стан</legend>
+
+                    <p>
+                        <label for="item-poster">Постер</label>
+                        <input id="item-poster" name="poster" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="item-poster-hint">
+                    </p>
+                    <p id="item-poster-hint">Файл JPG, PNG або WebP. Поле не обов'язкове.</p>
+
+                    <p>
+                        <label for="item-description">Сюжет</label>
+                        <textarea id="item-description" name="description" rows="4" cols="40" maxlength="500" aria-describedby="item-description-hint"></textarea>
+                    </p>
+                    <p id="item-description-hint">Не більше 500 символів.</p>
+
+                    <p>
+                        <input id="item-watched" name="watched" type="checkbox" value="true">
+                        <label for="item-watched">Переглянуто</label>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Додати</button>
+                    <button type="reset">Очистити</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer id="contacts">
+        <h2>Контакти</h2>
+        <address>
+            Автор проєкту: Бондаренко Костянтин, <a href="mailto:emailforwork@example.com">emailforwork@example.com</a>
+        </address>
+        <nav aria-label="Службова навігація">
+            <ul>
+                <li><a href="admin.html" aria-current="page">Адміністрування</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2026 Бондаренко Костянтин. Сумський державний університет.</p>
+    </footer>
+
+</body>
+</html>

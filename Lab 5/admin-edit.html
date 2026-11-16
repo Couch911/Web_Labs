@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Навчальна імітація адміністративного інтерфейсу: форма редагування елемента каталогу фільмів та серіалів.">
+    <title>Редагування: Інтерстеллар – Каталог фільмів та серіалів</title>
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+
+    <header>
+        <p><strong>Бондаренко Костянтин</strong></p>
+        <p>Студент факультету ЕлІТ СумДУ. Розробник каталогу фільмів та серіалів.</p>
+        <img src="photo.jpg" alt="Фото автора проєкту" width="200" fetchpriority="high">
+    </header>
+
+    <nav aria-label="Основна навігація">
+        <h2>Головне меню</h2>
+        <ul>
+            <li><a href="index.html">Головна (Каталог)</a></li>
+            <li><a href="details.html">Деталі фільму (Інтерстеллар)</a></li>
+            <li><a href="about.html">Про проєкт та FAQ</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <nav aria-label="Хлібні крихти">
+            <h2>Шлях на сайті:</h2>
+            <ol>
+                <li><a href="admin.html">Адміністрування</a></li>
+                <li aria-current="page">Редагування: Інтерстеллар</li>
+            </ol>
+        </nav>
+
+        <h1>Редагування: Інтерстеллар</h1>
+        <p>Ця сторінка — навчальна імітація адміністративного інтерфейсу. Поля форми заповнені поточними значеннями елемента. Кнопка «Скасувати зміни» повертає саме ці значення.</p>
+
+        <section aria-labelledby="edit-heading">
+            <h2 id="edit-heading">Дані елемента</h2>
+            <p>Форма надсилається методом get, тож змінені дані видно в адресному рядку.</p>
+
+            <form id="edit-form" action="admin-edit.html" method="get">
+                <input type="hidden" name="id" value="1">
+
+                <fieldset>
+                    <legend>Основні дані</legend>
+
+                    <p>
+                        <label for="item-title">Назва</label>
+                        <input id="item-title" name="title" type="text" value="Інтерстеллар" required minlength="2" maxlength="100" aria-describedby="item-title-hint">
+                    </p>
+                    <p id="item-title-hint">Від 2 до 100 символів.</p>
+
+                    <p>
+                        <label for="item-code">Код у каталозі</label>
+                        <input id="item-code" name="code" type="text" value="FM-001" required pattern="(FM|SR)-[0-9]{3}" aria-describedby="item-code-hint">
+                    </p>
+                    <p id="item-code-hint">FM (фільм) або SR (серіал), дефіс і три цифри, наприклад FM-014.</p>
+
+                    <p>
+                        <label for="item-category">Категорія</label>
+                        <select id="item-category" name="category" required>
+                            <option value="">Оберіть категорію</option>
+                            <option value="action">Бойовик</option>
+                            <option value="scifi" selected>Фантастика</option>
+                            <option value="drama">Драма</option>
+                            <option value="adventure">Пригоди</option>
+                            <option value="history">Історія</option>
+                            <option value="thriller">Трилер</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="item-duration">Тривалість, хв</label>
+                        <input id="item-duration" name="duration" type="number" value="169" required min="1" max="1000" step="1" inputmode="numeric" aria-describedby="item-duration-hint">
+                    </p>
+                    <p id="item-duration-hint">Ціле число від 1 до 1000. Для серіалу вкажіть сумарну тривалість усіх серій.</p>
+
+                    <p>
+                        <label for="item-added">Дата додавання</label>
+                        <input id="item-added" name="addedAt" type="date" value="2025-09-01" required min="2024-01-01" max="2026-12-31" aria-describedby="item-added-hint">
+                    </p>
+                    <p id="item-added-hint">Дата від 01.01.2024 до 31.12.2026.</p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Опис і стан</legend>
+
+                    <p>
+                        <label for="item-poster">Постер</label>
+                        <input id="item-poster" name="poster" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="item-poster-hint">
+                    </p>
+                    <p id="item-poster-hint">Файл JPG, PNG або WebP. Поточний постер: interstellar.jpg. Залиште поле порожнім, щоб його не змінювати.</p>
+
+                    <p>
+                        <label for="item-description">Сюжет</label>
+                        <textarea id="item-description" name="description" rows="4" cols="40" maxlength="500" aria-describedby="item-description-hint">Команда дослідників вирушає крізь червоточину в просторі, щоб знайти новий дім для людства.</textarea>
+                    </p>
+                    <p id="item-description-hint">Не більше 500 символів.</p>
+
+                    <p>
+                        <input id="item-watched" name="watched" type="checkbox" value="true" checked>
+                        <label for="item-watched">Переглянуто</label>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Зберегти зміни</button>
+                    <button type="reset">Скасувати зміни</button>
+                    <a href="admin.html">Повернутися до адміністрування</a>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer id="contacts">
+        <h2>Контакти</h2>
+        <address>
+            Автор проєкту: Бондаренко Костянтин, <a href="mailto:emailforwork@example.com">emailforwork@example.com</a>
+        </address>
+        <nav aria-label="Службова навігація">
+            <ul>
+                <li><a href="admin.html">Адміністрування</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2026 Бондаренко Костянтин. Сумський державний університет.</p>
+    </footer>
+
+</body>
+</html>

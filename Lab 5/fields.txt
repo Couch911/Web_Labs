@@ -1,0 +1,20 @@
+name | Значення | Тип даних | Елемент керування | Обмеження
+id | Ідентифікатор | number | input type="hidden" | лише у формі редагування
+title | Назва | string | input type="text" | required, minlength="2", maxlength="100"
+code | Код у каталозі | string | input type="text" | required, pattern="(FM|SR)-[0-9]{3}" (FM-001 — фільм, SR-001 — серіал)
+category | Жанр | string (enum) | select | required; перший пункт порожній; допустимі значення: action, scifi, drama, adventure, history, thriller
+duration | Тривалість, хв | number | input type="number" | required, min="1", max="1000", step="1"
+addedAt | Дата додавання | string (дата) | input type="date" | required, min="2024-01-01", max="2026-12-31"
+poster | Постер | file | input type="file" | accept="image/jpeg,image/png,image/webp"
+description | Сюжет | string | textarea | maxlength="500"
+watched | Переглянуто | boolean | input type="checkbox" | value="true"
+
+Поля форми відгуку
+name | Значення | Тип даних | Елемент керування | Обмеження
+authorName | Ім’я автора | string | input type="text" | autocomplete="name", maxlength="50"
+email | Електронна пошта | string | input type="email" | required, autocomplete="email"
+phone | Телефон | string | input type="tel" | autocomplete="tel", pattern="\+380[0-9]{9}"; необов’язкове
+rating | Оцінка | number (1–5) | 5 × input type="radio" у fieldset | required на першому radio
+recommend | Рекомендація | number (0–10) | input type="range" | min="0", max="10", step="1", value="5"
+comment | Коментар | string | textarea | minlength="10", maxlength="500"
+agree | Погодження | boolean | input type="checkbox" | required, value="true"
